@@ -31,12 +31,14 @@ const config = {
     extensions: [".tsx", ".ts", ".js"],
     alias: {
       "react-dom": "@hot-loader/react-dom",
+      "@src": path.resolve(__dirname, "src/"),
+      "@electron": path.resolve(__dirname, "electron/"),
     },
   },
   plugins: [
     new HtmlWebpackPlugin({
       templateContent: ({ htmlWebpackPlugin }) =>
-        '<!DOCTYPE html><html><head><meta charset="utf-8"><title>' +
+        '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>' +
         htmlWebpackPlugin.options.title +
         '</title></head><body><div id="app"></div></body></html>',
       filename: "index.html",
